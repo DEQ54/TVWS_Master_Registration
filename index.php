@@ -53,17 +53,17 @@
 	 						<b class="danger" id="modelidError" style="color: white"></b>
 	 					</div>
 	 					<div class="form-group">
-	 						<div class="label" style="color: white">Radiated Power</div>
+	 						<div class="label" style="color: white">Radiated Power(W)</div>
 	 						<input type="text" name="radiatedpower" class="form-control" placeholder="Radiated Power" id="radiatedpower">
 	 						<b class="danger" id="radiatedpowerError" style="color: white"></b>
 	 					</div>
 	 					<div class="form-group">
-	 						<div class="label" style="color: white">Conducted Power</div>
+	 						<div class="label" style="color: white">Conducted Power(W)</div>
 	 						<input type="text" name="conductedpower" class="form-control" placeholder="Conducted Power" id="conductedpower">
 	 						<b class="danger" id="conductedpowerError" style="color: white"></b>
 	 					</div>
 	 					<div class="form-group">
-	 						<div class="label" style="color: white">Transmitter Power</div>
+	 						<div class="label" style="color: white">Transmitter Power(W)</div>
 	 						<input type="text" name="transmitterpower" class="form-control" placeholder="Transmitter Power" id="transmitterpower">
 	 						<b class="danger" id="transmitterpowerError" style="color: white"></b>
 	 					</div>
@@ -129,7 +129,7 @@
 	 				<div id="fourth" class="page">
 	 					<h4 class="title" style="color: white">Antenna Characteristics</h4>
 	 					<div class="form-group">
-	 						<div class="label" style="color: white">Antenna Height</div>
+	 						<div class="label" style="color: white">Antenna Height(m)</div>
 	 						<input type="text" name="antennaheight" class="form-control" placeholder="Antenna Height" id="antennaheight">
 	 						<b class="danger" id="antennaheightError" style="color: white"></b>
 	 					</div>
@@ -346,15 +346,15 @@ else
 		dataType: 'json',
 		data:{"rulesetIDs":[{ "authority":"57c8e0e9-dbf9-314a-b985-ea431ec6b6f6","rulesetId":"57c8e0e9-dbf9-314a-b985-ea431ec6b6f6"}],"deviceDesc":{"username":$("#username").val(),"serialNumber": $("#serialnumber").val(),"modelId":$("#modelid").val(),"manufacturerId":$("#manufacturerid").val(),"longitude":$("#longitude").val(),"latitude":$("#latitude").val(),"conductedpower":$("#conductedpower").val(),"radiatedpower":$("#radiatedpower").val(),"region":$("#region").val(),"district":$("#district").val(),"transmitter_power":$("#transmitterpower").val(),"operator":$("#operator").val(),"antennaheight":$("#antennaheight").val(),"antennaheighttype":$("#antennaheighttype").val()},"key":"master"},
 		    success:function(response){	
-		    console.log("New Username: "+response.username);
-		    console.log("New Password: "+response.password);
+		    console.log(" Username: "+response.username);
+		    console.log(" Password: "+response.password);
 		    var uniqueUsername=response.username;
 		    var uniquePassword=response.password;
 		    var uniqueID=uniqueUsername;
 		    var uniquePASS=uniquePassword;
 		    var link=document.createElement("a");
-		    link.href='data:text/txt,'+encodeURIComponent("New Username: "+uniqueID+"\nNew Password: "+uniquePASS);
-		    link.download="Login Details.txt";
+		    link.href='data:text/txt,'+encodeURIComponent(" Username: "+uniqueID+"\n Password: "+uniquePASS);
+		    link.download="Master Details.txt";
 		    link.click();  
              $("#form-data")[0].reset();
 		       }
