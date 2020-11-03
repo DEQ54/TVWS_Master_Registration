@@ -259,14 +259,26 @@ $("#next-2").click(function(e){
 			$("#radiatedpowerError").html('*');
 		return false;
 	}
+	else if (isNaN($("#radiatedpower").val())) {
+		$("#radiatedpowerError").html('*');
+		return false;
+	}
 	else if ($("#conductedpower").val()=='') {
 
 			$("#conductedpowerError").html('*');
 		return false;
 	}
+	else if (isNaN($("#conductedpower").val())) {
+		$("#conductedpowerError").html('*');
+		return false;
+	}
 	else if ($("#transmitterpower").val()=='') {
 
 			$("#transmitterpowerError").html('*');
+		return false;
+	}
+	else if (isNaN($("#transmitterpower").val())) {
+		$("#transmitterpowerError").html('*');
 		return false;
 	}
 	else{
@@ -330,6 +342,10 @@ if ($("#operator").val()=='') {
 	else if ($("#antennaheight").val()=='') {
 
 			$("#antennaheightError").html('*');
+		return false;
+	}
+	else if (isNaN($("#antennaheight").val())) {
+		$("#antennaheightError").html('*');
 		return false;
 	}
 else if ($("#antennaheighttype").val()==''){
